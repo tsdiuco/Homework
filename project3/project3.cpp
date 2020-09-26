@@ -14,25 +14,11 @@ To Execute: ./project3 inFile.in outFile.out MIfile mode(0/1) alpha beta
 
 int main(int argc, char* argv[])
 {
-   // if (argc != 7)
-   // {
-   //    cout << "Incorrect number of command line arguments... Exiting Program\n";
-   //    exit(EXIT_FAILURE);
-   // }
-   // if (atoi(argv[4]) != 0 && atoi(argv[4]) != 1)         //Checking valid input for Mode
-   // {
-   //    cout << "Mode can only be 0 or 1... Exiting Program\n";
-   //    exit(EXIT_FAILURE);
-   // }
-   // if (atoi(argv[6]) > 25 || atoi(argv[6]) < 1)          //Checking valid input for Beta
-   // {
-   //    cout << "Beta's input has a range of [1..25]... Exiting Program\n";
-   //    exit(EXIT_FAILURE);
-   // }
    checkCommandArgmuents(argc, argv);
 
-   int mode = atoi(argv[3]);
-   int shift = atoi(argv[4]);
+   int mode = atoi(argv[4]);
+   int alpha = atoi(argv[5]);
+   int beta = atoi(argv[6]);
    int MIarray[26];
 
    ifstream inputFile;
@@ -49,7 +35,7 @@ int main(int argc, char* argv[])
    {
       while (inputFile.peek() != EOF)
       {
-         outputFile << encrypt(inputFile.get(), shift);
+         outputFile << encrypt(inputFile.get(), alpha, beta);
       }
       outputFile << endl;
    }
@@ -57,7 +43,7 @@ int main(int argc, char* argv[])
    {
       while(inputFile.peek() != EOF)
       {
-         outputFile << decrypt(inputFile.get(), shift);
+         outputFile << decrypt(inputFile.get(), MIarray, alpha, beta);
       }
       outputFile << endl;
    }

@@ -20,8 +20,8 @@ To Execute: ./project2 inFile.in outFile.out MIfile mode(0/1) alpha beta
 
 using namespace std;
 
-char encrypt(char, int);
-char decrypt(char, int);
+char encrypt(char, int, int);
+char decrypt(char, int[], int, int);
 void fillHash(int[], ifstream&);
 void checkCommandArgmuents(int, char*[]);
 

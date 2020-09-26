@@ -17,11 +17,11 @@ Pre: ch is the character to be encoded. shift is an integer in the range [1..25]
 Post: returns an encrypted character, i.e., shifted right shift positions, alphabet-wrap accounted for.
 */
 
-char encrypt(char ch, int shift)
+char encrypt(char ch, int alpha, int beta)
 {
    ch = toupper(ch);
    if (isalpha(ch))
-      return (ch + shift - 65) % 26 + 65;    // 65 represents the first capital letter in the ascii table
+      return ((ch * alpha) + beta - 65) % 26 + 65;    // 65 represents the first capital letter in the ascii table
    return ch;
 }
 
@@ -30,11 +30,11 @@ Pre: ch is the character to be decoded. shift is an integer in the range [1..25]
 Post: returns a decrypted character, i.e., shifted left shift positions, negative numbers accounted for.
 */
 
-char decrypt(char ch, int shift)
+char decrypt(char ch, int MIarray[], int alpha, int beta)
 {
    ch = toupper(ch);
    if (isalpha(ch))
-      return (ch - shift + 65) % 26 + 65;    // 65 represents the first capital letter in the ascii table
+      return ((MIarray[alpha] * ch) - (MIarray[alpha] * beta) + 65) % 26 + 65;    // 65 represents the first capital letter in the ascii table
    return ch;
 }
 
@@ -60,7 +60,7 @@ void fillHash(int MIarray[], ifstream& MIfile)
 }
 
 void checkCommandArgmuents(int argc, char* argv[]) {
-      if (argc != 7)
+   if (argc != 7)
    {
       cout << "Incorrect number of command line arguments... Exiting Program\n";
       exit(EXIT_FAILURE);
@@ -68,6 +68,11 @@ void checkCommandArgmuents(int argc, char* argv[]) {
    if (atoi(argv[4]) != 0 && atoi(argv[4]) != 1)         //Checking valid input for Mode
    {
       cout << "Mode can only be 0 or 1... Exiting Program\n";
+      exit(EXIT_FAILURE);
+   }
+   if (atoi(argv[5]) > 25 || atoi(argv[6]) < 1)
+   {
+      cout << "Alpha's input has a range of [1..25]... Exiting Program\n";
       exit(EXIT_FAILURE);
    }
    if (atoi(argv[6]) > 25 || atoi(argv[6]) < 1)          //Checking valid input for Beta
