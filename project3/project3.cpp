@@ -111,9 +111,8 @@ Post: Returns a bool value weither or not the alpha is valid
 
 bool validAlpha (int alpha, int MIarray[])
 {
-   if (MIarray[alpha] == -1) {
+   if (MIarray[alpha] == -1)
       return false;
-   }
    return true;
 }
 
