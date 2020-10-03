@@ -1,16 +1,29 @@
-#include <iostream>
-#include <array>
+#include "transCipher.h"
 
-using namespace std;
+int main(int argc, char* argv[]) {
 
-int main() {
-   char transCipher[26][2];
-   char letter = 'a';
+   if (argc != 2 && argc != 5){
+      cout << "Incorrect number of command line arguments...Exiting Program\n";
+      exit(EXIT_FAILURE);
+   }
+   if (argc == 2) {
+      ofstream keyFile;
+      keyFile.open(argv[1]);
+
+      if (!keyFile.is_open()) {
+         cout << "keyFile Failed to Open...Exiting Program\n";
+         exit(EXIT_FAILURE);
+      }
+      generateKey(keyFile);
+   }
+
+   char cipherArray[26][2];
+   char letter = 'A';
 
    for (int i = 0; i < 26; i++) {
-      transCipher[i][0] = letter;
+      cipherArray[i][0] = letter;
       letter++;
-      cout << transCipher[i][1] << endl;
+      cout <<  cipherArray[i][0] << endl;
    }
    return 0;
 }
