@@ -8,12 +8,12 @@ int main(int argc, char* argv[]) {
 
    for (int i = 0; i < 26; i++)
       cipherArray[i][0] = letter++;
+
    generateKey(key, cipherArray);
 
    for(int i = 0; i < 2; i++) {
-      for (int j = 0; j < 26; j++) {
+      for (int j = 0; j < 26; j++)
          cout << cipherArray[j][i] << " ";
-      }
       cout << endl;
    }
    return 0;
