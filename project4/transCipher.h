@@ -8,6 +8,6 @@
 
 using namespace std;
 
-void generateKey(ofstream&);
+void generateKey(char[], char[26][2]);
 
 #endif

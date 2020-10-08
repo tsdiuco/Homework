@@ -2,28 +2,19 @@
 
 int main(int argc, char* argv[]) {
 
-   if (argc != 2 && argc != 5){
-      cout << "Incorrect number of command line arguments...Exiting Program\n";
-      exit(EXIT_FAILURE);
-   }
-   if (argc == 2) {
-      ofstream keyFile;
-      keyFile.open(argv[1]);
-
-      if (!keyFile.is_open()) {
-         cout << "keyFile Failed to Open...Exiting Program\n";
-         exit(EXIT_FAILURE);
-      }
-      generateKey(keyFile);
-   }
-
    char cipherArray[26][2];
+   char key[26];
    char letter = 'A';
 
-   for (int i = 0; i < 26; i++) {
-      cipherArray[i][0] = letter;
-      letter++;
-      cout <<  cipherArray[i][0] << endl;
+   for (int i = 0; i < 26; i++)
+      cipherArray[i][0] = letter++;
+   generateKey(key, cipherArray);
+
+   for(int i = 0; i < 2; i++) {
+      for (int j = 0; j < 26; j++) {
+         cout << cipherArray[j][i] << " ";
+      }
+      cout << endl;
    }
    return 0;
 }
