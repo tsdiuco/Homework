@@ -31,17 +31,6 @@ int main(int argc, char* argv[]) {
       cout << endl;
       }
    }
-   // char cipherArray[26][2];
-   // char key[26];
-   // char letter = 'A';
-
-   // for (int i = 0; i < 26; i++)
-   //    cipherArray[i][0] = letter++;
-
-   // generateKey(key);
-
-   // for(int i = 0; i < 26; i++)
-   //    cipherArray[i][1] = static_cast<char>(key[i]);
 
    // for(int i = 0; i < 2; i++) {
    //    for (int j = 0; j < 26; j++)
