@@ -15,6 +15,10 @@ void generateKey(char key[]) {
 
 }
 
+char transform (char, int[][2]) {
+   return 'a';
+}
+
 void fileOpen(fstream& file, char name[], char mode)
 {
  string fileType;
@@ -36,14 +40,28 @@ void fileOpen(fstream& file, char name[], char mode)
  }
 }
 
-void readKeyFile(fstream& keyFile, char cipherArray[26][2]) {
+void readKeyFile(fstream& keyFile, char pt_ct[26][2]) {
    int count = 0;
    char keyChar = 'A';
    while (keyFile.peek() != EOF) {
       keyChar = keyFile.get();
       if (isalpha(keyChar)) {
-         cipherArray[count][1] = keyChar;
+         pt_ct[count][1] = keyChar;
          count++;
       }
    }
+}
+
+char encrypt (char ch, char array[26][2]) {
+   ch = toupper(ch);
+   if (isalpha(ch))
+      return ch;
+   return ch;
+}
+
+char decrypt (char ch, char array[26][2]) {
+   ch = toupper(ch);
+   if (isalpha(ch))
+      return ch;
+   return ch;
 }
