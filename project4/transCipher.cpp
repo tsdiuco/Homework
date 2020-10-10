@@ -1,6 +1,6 @@
 #include "transCipher.h"
 
-void generateKey(char key[], char cipherArray[26][2]) {
+void generateKey(char key[]) {
    bool validate[26] = {false};
    int k = 0;
    srand(time(0));
@@ -12,6 +12,38 @@ void generateKey(char key[], char cipherArray[26][2]) {
       validate[k] = 1;
       key[i] = k + 65;
    }
-   for(int i = 0; i < 26; i++)
-      cipherArray[i][1] = static_cast<char>(key[i]);
+
+}
+
+void fileOpen(fstream& file, char name[], char mode)
+{
+ string fileType;
+
+ if (mode == 'r')
+  fileType = "input";
+ if (mode == 'w')
+  fileType = "output";
+
+ if (mode == 'r')
+  file.open(name, ios::in);  //available thorugh fstream
+ if (mode == 'w')
+  file.open(name, ios::out);  //available through fstream;
+
+ if (file.fail()) //error condition
+ {
+  cout << "Error opening " << fileType << " file" << endl;
+  exit(EXIT_FAILURE);
+ }
+}
+
+void readKeyFile(fstream& keyFile, char cipherArray[26][2]) {
+   int count = 0;
+   char keyChar = 'A';
+   while (keyFile.peek() != EOF) {
+      keyChar = keyFile.get();
+      if (isalpha(keyChar)) {
+         cipherArray[count][1] = keyChar;
+         count++;
+      }
+   }
 }
