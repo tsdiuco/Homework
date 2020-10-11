@@ -1,3 +1,16 @@
+/*
+Class: CPSC 122-02
+Team Member 1: Trevor Diuco
+Team Member 2: None
+Submitted By: Trevor Diuco
+GU Username: tdiuco
+File Name: project4.cpp
+Program that has the functionality to either encrypt or decrypt using a transposition cipher message. It can also generate a encryption key.
+To Build: g++ project4.cpp -o project4
+To Execute:
+   Generate Key: ./project4 keyFile.txt
+   Encrypt(0)/Decrypt(1): ./project4 inFile.in outFile.out keyFile.txt mode(0/1)
+*/
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
