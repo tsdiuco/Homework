@@ -8,9 +8,11 @@
 
 using namespace std;
 
-void generateKey(char[]);
+void key_gen(int[]);
 char transform (char, int[][2]);
-void fileOpen(fstream& , char [], char);
-void readKeyFile(fstream&, char[][2]);
+void fileOpen(fstream& , char[], char);
+void readKeyFile(fstream&, int[][2]);
+void selection_sort(int[][2]);
+void swap(int, int, int[][2]);
 
 #endif
