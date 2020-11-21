@@ -19,7 +19,8 @@ Calc::Calc(int argcIn, char* argvIn[])
    inFix = new char[strlen(argvIn[1]) + 1];
    strcpy(inFix,argvIn[1]);
 
-   if (!CheckTokens()) {
+   if (!CheckTokens())
+   {
       cout << "Failed at CheckTokens()... Exiting\n";
       exit(EXIT_FAILURE);
    }
@@ -30,7 +31,8 @@ Calc::Calc(int argcIn, char* argvIn[])
 
    stk = new Stack;
 
-   if (!CheckParens()) {
+   if (!CheckParens())
+   {
       cout << "Failed at CheckParens()... Exiting\n";
       exit(EXIT_FAILURE);
    }
@@ -39,18 +41,20 @@ Calc::Calc(int argcIn, char* argvIn[])
 Calc::~Calc()
 {}
 
-void Calc::DisplayInFix() {
+void Calc::DisplayInFix()
+{
    cout << inFix << endl;
 }
 
 bool Calc::CheckParens()
 {
    int pos = 0;
-   while (inFix[pos] != '\0') {
-      cout << inFix[pos] << endl;
+   while (inFix[pos] != '\0')
+   {
       if (inFix[pos] == '(')
          stk->Push(inFix[pos]);
-      if (inFix[pos] == ')'){
+      if (inFix[pos] == ')')
+      {
          if (stk->IsEmpty())
             return false;
          stk->Pop();
@@ -66,12 +70,15 @@ bool Calc::CheckTokens()
 {
    string str = "()*/+-";
    int count = 0;
-   while (inFix[count] != '\0') {
-      if (isalpha(inFix[count])) {
+   while (inFix[count] != '\0')
+   {
+      if (isalpha(inFix[count]))
+      {
          count++;
          continue;
       }
-      for (int i = 0; i < str.length(); i++) {
+      for (int i = 0; i < str.length(); i++)
+      {
          if (inFix[count] == str.at(i))
             break;
          if (i == (str.length() - 1))
