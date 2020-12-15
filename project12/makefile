@@ -1,3 +1,13 @@
+# Class: CPSC 122-02
+# Trevor Diuco
+# GU Username: tdiuco
+# Submitted By: Trevor Diuco
+# GU Username: tdiuco
+# File Name: makefile
+# Make file for priority queue program
+# To build: make
+# To run: ./pqueue had we but world
+
 #to run: make
 #to eliminate .o files: make clean
 pqueue: queue3Tst.o queue3.o queue2.o list.o

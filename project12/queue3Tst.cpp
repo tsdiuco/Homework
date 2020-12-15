@@ -1,3 +1,15 @@
+/*
+Class: CPSC 122-02
+Trevor Diuco
+GU Username: tdiuco
+Submitted By: Trevor Diuco
+GU Username: tdiuco
+File Name: queue3Tst.h
+Test file for priority queue program
+To build: make
+To run: ./pqueue had we but world
+*/
+
 #include <iostream>
 using namespace std;
 

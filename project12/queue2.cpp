@@ -5,10 +5,6 @@ GU Username: tdiuco
 Submitted By: Trevor Diuco
 GU Username: tdiuco
 File Name: queue2.cpp
-Header file for a linked list with:
-1) The capacity to manipulate the tail
-2) The capacity to manipulate the head
-3) The capacity to make a copy of a list with a the copy constructor
 */
 
 //Queue using List and composition

@@ -5,6 +5,9 @@ GU Username: tdiuco
 Submitted By: Trevor Diuco
 GU Username: tdiuco
 File Name: queue3.cpp
+Implementation file for priority queue program
+To build: make
+To run: ./pqueue had we but world
 */
 
 //Queue using List and composition

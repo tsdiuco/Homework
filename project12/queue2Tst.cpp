@@ -1,3 +1,15 @@
+/*
+Class: CPSC 122-02
+Trevor Diuco
+GU Username: tdiuco
+Submitted By: Trevor Diuco
+GU Username: tdiuco
+File Name: queue2Tst.h
+Test file for queue program
+To build: make
+To run: ./queue had we but world
+*/
+
 #include <iostream>
 using namespace std;
 
